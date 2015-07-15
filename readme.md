@@ -1,6 +1,6 @@
 # jenkins-notifier
 
-Display a system notification if the count of unstable jobs in Jenkins changes.
+jenkins-notifier is a CLI utility that displays a system notification if the count of unstable jobs in Jenkins changes.
 
 Unstable jobs are jobs with the [BallColor enum](http://javadoc.jenkins-ci.org/hudson/model/BallColor.html) of RED, RED_ANIME, YELLOW and YELLOW_ANIME.
 
