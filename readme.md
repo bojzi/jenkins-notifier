@@ -21,15 +21,15 @@ jenkins-notifier {username} {password} {url} [{interval}]
 ### Parameters
 - `username` your Jenkins username
 - `password` your Jenkins password
-- `url` complete URL to your Jenkins
-- `interval` (optional) how often (in seconds) to check Jenkins
+- `url` complete URL to Jenkins
+- `interval` (*optional*) how often (in seconds) to check Jenkins
 
 ### Examples
 ```
 jenkins-notifier foo bar http://jenkins.loc 10
 ```
 
-Checks Jenkins at `foo` with the username `bar` and password `http://jenkins.loc` every `10` seconds.
+Checks Jenkins at `http://jenkins.loc` with the username `foo` and password `bar` every `10` seconds.
 
 ## License
 MIT © Kristian Poslek
