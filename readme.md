@@ -1,6 +1,6 @@
 # jenkins-notifier
 
-jenkins-notifier is a CLI utility that displays a system notification if the count of unstable jobs in Jenkins changes.
+jenkins-notifier is a Node CLI utility that displays a system notification and console message if the count of unstable jobs in Jenkins changes.
 
 Unstable jobs are jobs with the [BallColor enum](http://javadoc.jenkins-ci.org/hudson/model/BallColor.html) of RED, RED_ANIME, YELLOW and YELLOW_ANIME.
 
@@ -15,21 +15,26 @@ $ npm install -g jenkins-notifier
 ## Usage
 
 ```
-jenkins-notifier {username} {password} {url} [{interval}]
+jenkins-notifier {url} {username} [{interval}]
 ```
 
+After starting, you'll be prompted for your Jenkins password.
+
+The password is not visible while being typed in.
+
 ### Parameters
-- `username` your Jenkins username
-- `password` your Jenkins password
 - `url` complete URL to Jenkins
+- `username` your Jenkins username
 - `interval` (*optional*) how often (in seconds) to check Jenkins
 
 ### Examples
 ```
-jenkins-notifier foo bar http://jenkins.loc 10
+jenkins-notifier http://jenkins.loc bruce 10
+Enter Jenkins password:
+jenkins-notifier is running and checking every 10s.
 ```
 
-Checks Jenkins at `http://jenkins.loc` with the username `foo` and password `bar` every `10` seconds.
+Checks Jenkins at `http://jenkins.loc` with the username `bruce` every `10` seconds.
 
 ## License
 MIT © Kristian Poslek
