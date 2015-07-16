@@ -65,6 +65,7 @@ prompt.get(schema, function(err, result) {
 
     function checkJenkins() {
         var newErrorCount = 0;
+        var unstableJobsList = '';
 
         connection.job.list(function (err, data) {
             if (err) throw err;
@@ -75,11 +76,16 @@ prompt.get(schema, function(err, result) {
                     || data[i].color === 'yellow'
                     || data[i].color === 'yellow_anime') {
                     newErrorCount++;
+                    unstableJobsList += '  - ' + data[i].name + '\n';
                 }
             }
 
+            if (unstableJobsList.length > 0) {
+                unstableJobsList = '  Unstable jobs: \n' + unstableJobsList;
+            }
+
             if (errorCount < newErrorCount) {
-                console.log(logSymbols.error, '[' + new Date() + ']\n  There are new unstable jobs. \n  Unstable job count: ' + newErrorCount + ' (previously: ' + errorCount + ')\n');
+                console.log(logSymbols.error, '[' + new Date() + ']\n  There are new unstable jobs. \n  Unstable job count: ' + newErrorCount + ' (previously: ' + errorCount + ')\n' + unstableJobsList);
                 notifier.notify({
                     title: 'More unstable jobs in Jenkins',
                     message: 'There are new unstable jobs. \nUnstable job count: ' + newErrorCount + ' (previously: ' + errorCount + ')',
@@ -89,7 +95,7 @@ prompt.get(schema, function(err, result) {
                 })
             }
             else if (errorCount > newErrorCount) {
-                console.log(logSymbols.success,'[' + new Date() + ']\n  Some unstable jobs were fixed. \n  Unstable job count: ' + newErrorCount + ' (previously: ' + errorCount + ')\n');
+                console.log(logSymbols.success,'[' + new Date() + ']\n  Some unstable jobs were fixed. \n  Unstable job count: ' + newErrorCount + ' (previously: ' + errorCount + ')\n' + unstableJobsList);
                 notifier.notify({
                     title: 'Less unstable jobs in Jenkins',
                     message: 'Some unstable jobs were fixed. \nUnstable job count: ' + newErrorCount + ' (previously: ' + errorCount + ')',
@@ -105,5 +111,3 @@ prompt.get(schema, function(err, result) {
 
     setInterval(checkJenkins, interval);
 });
-
-

@@ -1,34 +1,34 @@
 {
-  "name": "jenkins-notifier",
-  "version": "0.1.1",
-  "description": "Get notifications of unstable jobs in Jenkins",
-  "license": "MIT",
-  "repository": "bojzi/jenkins-notifier",
-  "author": {
-    "name": "Kristian Poslek",
-    "email": "kristian.poslek@gmail.com"
-  },
-  "bin": {
-    "jenkins-notifier": "jenkins-notifier.js"
-  },
-  "preferGlobal": true,
-  "files": [
-    "jenkins-notifier.js",
-    "icon.png"
-  ],
-  "keywords": [
-    "jenkins",
-    "notifier",
-    "notify",
-    "jobs",
-    "unstable"
-  ],
-  "dependencies": {
-    "jenkins": "^0.10.1",
-    "log-symbols": "^1.0.2",
-    "meow": "^3.3.0",
-    "node-notifier": "^4.2.3",
-    "open": "0.0.5",
-    "prompt": "^0.2.14"
-  }
+    "name": "jenkins-notifier",
+    "version": "0.1.2",
+    "description": "Get notifications of unstable jobs in Jenkins",
+    "license": "MIT",
+    "repository": "bojzi/jenkins-notifier",
+    "author": {
+        "name": "Kristian Poslek",
+        "email": "kristian.poslek@gmail.com"
+    },
+    "bin": {
+        "jenkins-notifier": "jenkins-notifier.js"
+    },
+    "preferGlobal": true,
+    "files": [
+        "jenkins-notifier.js",
+        "icon.png"
+    ],
+    "keywords": [
+        "jenkins",
+        "notifier",
+        "notify",
+        "jobs",
+        "unstable"
+    ],
+    "dependencies": {
+        "jenkins": "^0.10.1",
+        "log-symbols": "^1.0.2",
+        "meow": "^3.3.0",
+        "node-notifier": "^4.2.3",
+        "open": "0.0.5",
+        "prompt": "^0.2.14"
+    }
 }
