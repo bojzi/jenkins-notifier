@@ -11,8 +11,7 @@ var cli = meow({
         'Start jenkins-notifier with prefilled values (checks every 5 seconds)',
         '	jenkins-notify http://jenkins.location username',
         'Configure check interval to 10 seconds (set last parameter)',
-        '	jenkins-notify http://jenkins.loc username 10',
-
+        '	jenkins-notify http://jenkins.loc username 10'
     ]
 });
 
