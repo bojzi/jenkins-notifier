@@ -1,6 +1,6 @@
 {
     "name": "jenkins-notifier",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "Get notifications of unstable jobs in Jenkins",
     "license": "MIT",
     "repository": "bojzi/jenkins-notifier",
@@ -9,7 +9,7 @@
         "email": "kristian.poslek@gmail.com"
     },
     "bin": {
-        "jenkins-notifier": "jenkins-notifier.js"
+        "jenkins-notifier": "cli.js"
     },
     "preferGlobal": true,
     "files": [
