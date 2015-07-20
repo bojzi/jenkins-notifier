@@ -49,7 +49,3 @@ jenkins-notifier is running and checking every 10s.
 ```
 
 Checks Jenkins at `http://jenkins.loc` with the username `bruce` every `10` seconds.
-
-
-## License
-MIT © Kristian Poslek

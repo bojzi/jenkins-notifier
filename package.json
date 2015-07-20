@@ -1,16 +1,23 @@
 {
     "name": "jenkins-notifier",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "Get notifications of unstable jobs in Jenkins",
     "license": "MIT",
-    "repository": "bojzi/jenkins-notifier",
+    "repository": "comsysto/jenkins-notifier",
     "author": {
-        "name": "Kristian Poslek",
-        "email": "kristian.poslek@gmail.com"
+        "name": "comSysto GmbH",
+        "email": "kontakt@comsysto.com",
+        "url": "http://comsysto.com/"
     },
     "bin": {
         "jenkins-notifier": "cli.js"
     },
+    "contributors": [
+        {
+            "name": "Kristian Poslek",
+            "email": "kristian.poslek@gmail.com"
+        }
+    ],
     "preferGlobal": true,
     "files": [
         "cli.js",

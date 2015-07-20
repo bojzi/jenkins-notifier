@@ -46,20 +46,25 @@ module.exports = function checkJenkins(username, password, urlInput, interval) {
             }
 
             if (errorCount < newErrorCount) {
-                console.log(logSymbols.error, '[' + new Date() + ']\n  There are new unstable jobs. \n  Unstable job count: ' + newErrorCount + ' (previously: ' + errorCount + ')\n' + unstableJobsList);
+                console.log(logSymbols.error, '[' + new Date() + ']\n  There are new unstable jobs. \n  Unstable job count: '
+                    + newErrorCount + ' (previously: ' + errorCount + ')\n' + unstableJobsList);
                 notifier.notify({
                     title: 'More unstable jobs in Jenkins',
-                    message: 'There are new unstable jobs. \nUnstable job count: ' + newErrorCount + ' (previously: ' + errorCount + ')',
+                    message: 'There are new unstable jobs. \nUnstable job count: ' + newErrorCount + ' (previously: '
+                    + errorCount + ')',
                     icon: path.join(__dirname, 'icon.png'),
                     sound: true,
                     wait: true
                 })
             }
             else if (errorCount > newErrorCount) {
-                console.log(logSymbols.success,'[' + new Date() + ']\n  Some unstable jobs were fixed. \n  Unstable job count: ' + newErrorCount + ' (previously: ' + errorCount + ')\n' + unstableJobsList);
+                console.log(logSymbols.success, '[' + new Date()
+                    + ']\n  Some unstable jobs were fixed. \n  Unstable job count: ' + newErrorCount + ' (previously: '
+                    + errorCount + ')\n' + unstableJobsList);
                 notifier.notify({
                     title: 'Less unstable jobs in Jenkins',
-                    message: 'Some unstable jobs were fixed. \nUnstable job count: ' + newErrorCount + ' (previously: ' + errorCount + ')',
+                    message: 'Some unstable jobs were fixed. \nUnstable job count: ' + newErrorCount + ' (previously: '
+                    + errorCount + ')',
                     icon: path.join(__dirname, 'icon.png'),
                     sound: true,
                     wait: true
